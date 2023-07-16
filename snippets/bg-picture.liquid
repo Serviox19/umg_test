@@ -1,0 +1,7 @@
+<picture class="bg-hero-image">
+  {%- if mobile_img != blank -%}
+    <source media="(max-width: 649px)" srcset="{{- mobile_img -}}">
+  {%- endif -%}
+  <source media="(min-width: 650px)" srcset="{{- image -}}">
+  <img data-src="{{ mobile_img }}" alt="{{ image.alt }}" loading="lazy">
+</picture>

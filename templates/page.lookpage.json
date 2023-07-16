@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "hero": {
+      "type": "lookpage-hero"
+    },
+    "product-slider": {
+      "type": "lookpage-product-slider"
+    }
+  },
+  "order": [
+    "hero",
+    "product-slider"
+  ]
+}
