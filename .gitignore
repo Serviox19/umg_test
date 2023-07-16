@@ -1,0 +1,33 @@
+.DS_Store
+node_modules
+~/
+/dist
+/upload
+*.log
+package-json.lock
+package-lock.json
+styleguide
+
+# local env files
+.env.local
+.env.*.local
+.env
+
+# Build
+dist
+
+# User
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.editorconfig
+.vscode/settings.json
+
+# Shopify Theme & Section Settings
+settings_data.json
