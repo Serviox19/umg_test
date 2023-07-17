@@ -60,7 +60,7 @@ class ProductCard extends HTMLElement {
 
       jQuery.ajax({
         type: 'POST',
-        url: '/cart/add.json',
+        url: '/cart/add.js',
         data: options,
         dataType: 'json',
         success: function () {
