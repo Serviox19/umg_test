@@ -9,6 +9,8 @@ class ProductCard extends HTMLElement {
 
     this.addToCart = this.addToCart.bind(this);
     this._product = null;
+
+    this.cart = document.querySelector('cart-notification') || document.querySelector('cart-drawer');
   }
 
   attributeChangedCallback(attr, oldVal, newVal) {
@@ -32,7 +34,7 @@ class ProductCard extends HTMLElement {
       const variant = this._product.variants[0];
       if (variant.available) {
         const button = `
-          <button class="add-to-cart" data-variant-id="${variant.id}" data-option data-available="true">Add To Bag</button>
+          <button class="add-to-cart" data-variant-id="${variant.id}" name="add" data-option data-available="true">Add To Bag</button>
         `;
         cta = button;
       }
@@ -58,18 +60,13 @@ class ProductCard extends HTMLElement {
 
       jQuery.ajax({
         type: 'POST',
-        url: '/cart/add.js',
+        url: '/cart/add.json',
         data: options,
         dataType: 'json',
         success: function () {
-          document.documentElement.dispatchEvent(new CustomEvent('cart:refresh', {
-            bubbles: true  //this code is for prestige theme, is to refresh the cart
-          }));
+          window.location.reload();
         }
       });
-      document.documentElement.dispatchEvent(new CustomEvent('cart:refresh', {
-        bubbles: true // same code for prestige theme
-      }));
     }
   }
 }
