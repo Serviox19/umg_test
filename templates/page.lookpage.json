@@ -3,12 +3,12 @@
     "hero": {
       "type": "lookpage-hero"
     },
-    "product-slider": {
-      "type": "lookpage-product-slider"
+    "product-list": {
+      "type": "lookpage-product-list"
     }
   },
   "order": [
     "hero",
-    "product-slider"
+    "product-list"
   ]
 }

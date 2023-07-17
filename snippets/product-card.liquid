@@ -1,0 +1,24 @@
+{% assign compare_at_price = product.compare_at_price %}
+{% assign price = product.price %}
+
+<product-card product="{{ product | json | escape }}">
+  <div class="product-card">
+    <a href="{{ product.url }}" class="product-card__image">
+      <img src="{{ product.featured_image | img_url: '1024x' }}" alt="{{ product.featured_image.alt }}" loading="lazy" />
+    </a>
+    <a href="{{ product.url }}" class="product-card__details">
+      <h3 class="product-card__title">{{ product.title }}</h3>
+      <p class="product-card__price">
+        <span class="product-card__amount product-card__amount--compare">
+          {%- if product.compare_at_price -%}
+            {{ product.compare_at_price | money }}
+          {%- endif -%}
+        </span>
+        <span class="product-card__amount">
+          {{ product.price | money }}
+        </span>
+      </p>
+    </a>
+    <div class="product-card__cta"></div>
+  </div>
+</product-card>

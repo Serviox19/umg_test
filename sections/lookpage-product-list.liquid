@@ -1,0 +1,22 @@
+<div class="lookpage-products">
+  <div class="product-list-wrap">
+    {% if section.settings.lookpage_collection != blank %}
+      {% for _product in collections[section.settings.lookpage_collection].products %}
+        {% render 'product-card', product: _product %}
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Lookpage Products",
+    "settings": [
+      {
+        "type": "collection",
+        "id": "lookpage_collection",
+        "label": "Chose Collection to show on lookpage"
+      }
+    ]
+  }
+{% endschema %}

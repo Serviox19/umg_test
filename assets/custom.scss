@@ -14,6 +14,7 @@
 
   .bg-hero-image {
     img {
+      width: 100%;
       min-height: 350px;
       aspect-ratio: 3/2;
 
@@ -84,4 +85,127 @@
       border: solid 1px white;
     }
   }
+}
+
+.lookpage-products {
+  margin-top: 2rem;
+  max-width: 1440px;
+  margin: 0 auto;
+
+  .product-list-wrap {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 40px 20px;
+    margin-top: 24px;
+
+    @media only screen and (min-width: 768px) {
+      margin-top: 40px;
+      padding-left: 24px;
+      padding-right: 24px;
+      grid-gap: 40px;
+    }
+  }
+}
+
+/* Product Card */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  position: relative;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 24px 16px;
+}
+
+.product-card__image {
+  display: block;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 16px;
+  border-radius: 4px;
+
+  img {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .product-card {
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+  }
+}
+
+.product-card__details {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+
+.product-card__title {
+  font-family: Helvetica;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 120%;
+  text-transform: capitalize;
+  text-align: center;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .product-card__details {
+    align-items: flex-start;
+  }
+
+  .product-card__title {
+    font-size: 16px;
+    font-weight: 700;
+    text-align: left;
+    display: block;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: none;
+    overflow: visible;
+  }
+}
+
+.product-card__price {
+  display: flex;
+  flex: 0;
+  margin: 8px 0 0 0;
+}
+
+.product-card__amount {
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #151e30;
+  display: inline-block;
+}
+
+.product-card__amount--compare {
+  color: #a2a2a2;
+  text-decoration: line-through;
+  font-weight: normal;
+}
+
+.product-card__cta .add-to-cart {
+  width: 100%;
+  padding: 16px 0;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 120%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #000;
+  margin-top: 16px;
+  cursor: pointer;
 }
